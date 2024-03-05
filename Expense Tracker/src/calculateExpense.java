@@ -42,7 +42,7 @@ public class calculateExpense {
         System.out.println("\nView Expense");
         for (int i = 0; i< expenses.size();i++){
             Expense expense = expenses.get(i);
-            System.out.printf("%n%d. Amount: Rs.%.2f  Date: %s  Category: %s%n ",i+1,expense.amount,expense.date,expense.category);
+            System.out.printf("%d. Amount: Rs.%.2f  Date: %s  Category: %s%n ",i+1,expense.amount,expense.date,expense.category);
 
         }
     }

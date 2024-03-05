@@ -5,13 +5,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        calculateExpense cs = new calculateExpense();
-
         Scanner sc = new Scanner(System.in);
         int choice;
 
 
-        while (true){
+        do {
             System.out.println();
             System.out.println("\t\t  Expense Tracker\t\t");
             System.out.println("_________________________________");
@@ -24,7 +22,11 @@ public class Main {
             choice = sc.nextInt();
 
             switch (choice) {
-
+                case 0: {
+                    System.out.println("Quiting program......");
+                    System.out.println("Have a nice day!!!");
+                    return;
+                }
                 case 1: {
                     calculateExpense.addExpense(sc);
                     break;
@@ -38,17 +40,12 @@ public class Main {
                     break;
                 }
                 case 4: {
-                    System.out.println("Total Expense: "+calculateExpense.calculateTotalExpense());
+                    calculateExpense.calculateTotalExpense();
                     break;
                 }
                 case 5: {
                     calculateExpense.viewSummaryReport();
                     break;
-                }
-                case 0: {
-                    System.out.println("Quiting program......");
-                    System.out.println("Have a nice day!!!");
-                    return;
                 }
 
                 default: {
@@ -58,6 +55,7 @@ public class Main {
 
             }
         }
-
+        while (choice != 5);
+        sc.close();
     }
 }
